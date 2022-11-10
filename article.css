@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+*,*::before,*::after{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400; 
+}
+img{
+    max-width: 100%;
+}
+li,a{
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+h1{
+    font-size: 28px;
+}
+span{
+    font-size: 12px;
+}
+header span{
+    font-weight: 700;
+}
+header{
+    padding: 1em;
+}
+
+/* THE HEADER STYLING */
+.logo{
+    display: inline-flex;
+    align-items: center;
+}
+.logo span{
+    font-size: 15px;
+}
+
+.open-nav{
+    position: absolute;
+    cursor: pointer;
+    right:20px;
+    top:30px;
+}
+
+/* the navigation styling */
+.nav-links{
+  position: absolute;
+  top: 9%;
+  left:0;
+  visibility: hidden;
+  right:0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.932);
+  width: 80%;
+  border-radius: 4%;
+  padding: 1em 0;
+  margin: auto;
+}
+.nav-links ul li{
+    margin: 1em;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* MAIN SECTION STYLING */
+
+/* the article section */
+.article-section,
+.post-section{
+    padding-inline: 1em;
+}
+.date-info{
+    margin-block: 1.5em;
+    display: block;
+}
+
+.date-info + h1{
+   margin-bottom: .5em;
+   max-width: 90%;
+}
+.date-info + h1 + p{
+    line-height: 22px;
+}
+.hero-image{
+    margin-block: 1.5em;
+}
+.article-textbox h3{
+    margin-block: 2rem;
+}
+br {
+    margin-bottom: 2em;
+}
+
+
+/* The post section styling */
+.post-section,
+.recent-post{
+    margin-top: 4em;
+}
+.post-section h3{
+    text-align: center;
+    margin-block: 1rem;
+}
+
+.recent-post h2{
+    margin-block: .3em;
+}
+
+/* FOOTER STYLING */
+footer{
+    background-color:  rgba(0, 0, 0, 0.904);
+    margin-top: 3rem;
+    padding-block: 3rem;
+    text-align: center;
+    color: white;
+}
+.copyright{
+    font-size: 11px;
+    margin-top:.3em
+}
+
+
+/* MEDIA QUERY FOR LARGER SCREEN SIZES */
+@media (min-width:600px) {
+/*  displaying the header  section as flex and removing the absolute positioned nav-links */
+    .top-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+ 
+    h3{
+        font-size: 25px;
+    }
+    .open-nav{
+        display: none;
+    }
+    .logo{
+        margin-left: 4em;
+    }
+     span,
+     .logo span{
+        font-size: 17px;
+    }
+    .nav-links{
+        visibility: visible;
+        background: none;
+        box-shadow: none;
+        position: relative;
+        top:0;
+        width:30%;
+        margin:0;
+        padding:0;
+    }
+    .nav-links ul li{
+        display: inline-block;
+        padding:0;
+    }
+    .nav-links a{
+        color: rgb(75, 18, 75);
+    }
+    .nav-links ul li::after{
+        content: '';
+        display: block;
+        margin: 3px;
+        width:0;
+        height: 3px;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) .6s;
+        background-color: brown;
+    }
+    .nav-links ul li:hover::after{
+        width: 100%;
+    }
+
+    /* setting a max-width on the article-intro && article textbox */
+    .article-intro,
+    .article-textbox{
+        max-width: 80%;
+        margin-left: 5em;
+    }
+
+    .article-section{
+        margin-top: 2rem;
+        padding-block: 1em;
+        background-color: rgba(235, 235, 235, 0.322);
+    }
+    .article-section h1{
+        font-size: 40px;
+    }
+
+    .article-textbox  h4{
+        margin-block: 2rem;
+    }
+
+    /* Putting a display grid on the RECENT POST Items */
+     .post-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2em;
+        gap: 2em;
+        padding-inline: 3em;
+        margin-bottom: 5em;
+     }
+     .post-section h3{
+        grid-column: 1 /-1;
+     }
+}

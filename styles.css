@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+*,*::before,*::after{
+    box-sizing:border-box;
+    padding:0;
+    margin:0
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400; 
+}
+img{
+    max-width: 100%;
+}
+li,a{
+    text-decoration: none;
+    list-style-type: none;
+    color: rgb(41, 17, 46);
+}
+h1{
+    font-size: 32px;
+}
+span{
+    font-size: 12px;
+}
+header span{
+    font-weight: 700;
+}
+header{
+    padding: 1em;
+}
+
+/* THE HEADER STYLING */
+.logo{
+    display: inline-flex;
+    align-items: center;
+}
+.logo span{
+    font-size: 15px;
+}
+
+.open-nav{
+    position: absolute;
+    cursor: pointer;
+    right:20px;
+    top:30px;
+}
+
+/* the navigation styling */
+.nav-links{
+  position: absolute;
+  top: 9%;
+  left:0;
+  visibility: hidden;
+  right:0;
+  text-align: center;
+  background-color:white;
+  box-shadow: 0 4px 8px  0 rgba(0, 0, 0, 0.199);
+  width: 80%;
+  border-radius: 4%;
+  padding: 1em 0;
+  margin: auto;
+}
+.nav-links ul li{
+    margin: 1em;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav-links ul li:hover,
+.nav-links li:focus{
+   opacity: .9;
+}
+
+/* 'MAIN' STYLING */
+.intro-section{
+    background-image: url('images/blog-image-hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 6em 1em 1em;
+}
+
+.intro-body{
+    color: white;
+    max-width: 90%;
+}
+.intro-body .date-info{
+    margin-block: .9em;
+    display: block;
+}
+
+.intro-body h1{
+    margin-bottom: .6em;
+}
+.intro-body p{
+    line-height: 22px;
+}
+
+
+/* Blog section */
+.blog-section{
+    margin-top: 2em;
+    padding-inline: 1em 1.5em;
+}
+.blog-post{
+    margin-bottom: 2.9em;
+}
+
+.blog-post p{
+    display:  block;
+    margin-block: .38rem;
+}
+
+.view-more{
+    text-align: center;
+    display: block;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition:.5s;
+    text-decoration-thickness: .2rem;
+    color: rgb(22, 10, 34);
+}
+.view-more:hover{
+    transform: scale(1.1)
+}
+/* FOOTER STYLING */
+footer{
+    background-color:  rgba(0, 0, 0, 0.904);
+    margin-top: 3rem;
+    padding-block: 3rem;
+    text-align: center;
+    color: white;
+}
+.copyright{
+    font-size: 11px;
+    margin-top:.43em
+}
+
+
+/* MEDIA QUERY FOR LARGER SCREENS */
+@media(min-width: 600px){
+    /*  displaying the header  section as flex and removing the absolute positioned nav-links */
+    .top-nav{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+    }
+    .open-nav{
+        display: none;
+    }
+    .logo{
+        margin-left: 4em;
+    }
+    span,
+    .logo span{
+       font-size: 14px;
+   }
+    .nav-links{
+        visibility: visible;
+        background: none;
+        box-shadow: none;
+        position: relative;
+        top:0;
+        width:30%;
+        margin:0;
+        padding:0;
+    }
+    .nav-links ul li{
+        display: inline-block;
+        padding:0;
+    }
+    .nav-links ul li::after{
+        content: '';
+        display: block;
+        margin: 3px;
+        width:0;
+        height: 3px;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) .6s;
+        background-color: brown;
+    }
+    .nav-links ul li:hover::after{
+        width: 100%;
+    }
+
+
+    /* INTRO SECTION */
+    .intro-section{
+        height: 70vh;
+    }
+    .intro-body{
+        padding-left:4em;
+        max-width: 60%;
+        margin-top:  9em;
+    }
+
+    /* PUTTING A DISPLAY GRID ON THE BLOG POST */
+    .blog-section{
+        padding: 3em ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 3em;
+        gap: 3em;
+    }
+
+}

@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+*,*::before,*::after{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400; 
+}
+img{
+    max-width: 100%;
+}
+li,a{
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+h1{
+    font-size: 28px;
+}
+span{
+    font-size: 12px;
+}
+header span{
+    font-weight: 700;
+}
+header{
+    padding: 1em;
+}
+
+/* THE HEADER STYLING */
+.logo{
+    display: inline-flex;
+    align-items: center;
+}
+.logo span{
+    font-size: 15px;
+}
+
+.open-nav{
+    position: absolute;
+    cursor: pointer;
+    right:20px;
+    top:30px;
+}
+
+/* the navigation styling */
+.nav-links{
+  position: absolute;
+  top: 9%;
+  left:0;
+  visibility: hidden;
+  right:0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.932);
+  width: 80%;
+  border-radius: 4%;
+  padding: 1em 0;
+  margin: auto;
+}
+.nav-links ul li{
+    margin: 1em;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* MAIN SECTION STYLING */
+
+/* aboutMe section */
+.aboutme-section,
+.post-section{
+    padding-inline: 1em;
+}
+.date-info{
+    margin-block: 1.5em;
+    display: block;
+}
+
+.user-image{
+    margin-block: 1.5em;
+    display:block;
+}
+.aboutme-intro{
+  margin-bottom:2em;
+}
+.aboutme-textbox h3,
+.aboutme-intro h1{
+    margin-block: .7rem;
+}
+br {
+    margin-bottom: 2em;
+}
+
+.aboutme-textbox p + h3{
+    margin-top: 2em;
+}
+
+
+/* The post section styling */
+.aboutme-section,
+.recent-post{
+    margin-top: 4em;
+}
+.aboutme-section h3{
+    margin-block: 1rem;
+}
+.post-section h3{
+    margin-block: 3rem 0;
+    text-align: center;
+}
+
+.recent-post h2{
+    margin-block: .3em;
+}
+
+/* FOOTER STYLING */
+footer{
+    background-color:  rgba(0, 0, 0, 0.904);
+    margin-top: 3rem;
+    padding-block: 3rem;
+    text-align: center;
+    color: white;
+}
+.copyright{
+    font-size: 11px;
+    margin-top:.3em
+}
+
+
+/* MEDIA QUERY FOR LARGER SCREEN SIZES */
+@media (min-width:600px) {
+/*  displaying the header  section as flex and removing the absolute positioned nav-links */
+    .top-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h3{
+        font-size: 24px;
+    }
+    .open-nav{
+        display: none;
+    }
+    .logo{
+        margin-left: 4em;
+    }
+     span,
+     .logo span{
+        font-size: 17px;
+    }
+    .nav-links{
+        visibility: visible;
+        background: none;
+        box-shadow: none;
+        position: relative;
+        top:0;
+        width:30%;
+        margin:0;
+        padding:0;
+    }
+    .nav-links ul li{
+        display: inline-block;
+        padding:0;
+    }
+    .nav-links a{
+        color: rgb(75, 18, 75);
+    }
+    .nav-links ul li::after{
+        content: '';
+        display: block;
+        margin: 3px;
+        width:0;
+        height: 3px;
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) .6s;
+        background-color: brown;
+    }
+    .nav-links ul li:hover::after{
+        width: 100%;
+    }
+    
+    /* MAIN SECTION */
+    main{
+        background-color: rgba(231, 228, 228, 0.219);
+    }
+    .aboutme-intro{
+        display: flex;
+        align-items: center;
+    }
+    .user-image{
+        margin-inline: 3em;
+    }
+    .user-image + div{
+        max-width: 70%;
+    }
+
+    .aboutme-textbox{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Putting a display grid on the RECENT POST Items */
+    .post-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2em;
+        gap: 2em;
+        padding-inline: 2em;
+        margin-block: 4em 2em;
+        }
+        .post-section h3{
+        grid-column: 1 /-1;
+        }
+}
